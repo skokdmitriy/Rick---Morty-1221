@@ -8,33 +8,30 @@
 import SwiftUI
 
 struct HeaderView: View {
-    let model: CharacterDetailModel
-    @StateObject var viewModel: DetailViewModel
+	let model: CharacterDetailModel
 
-    var body: some View {
-		VStack(spacing: .zero) {			
-			if let image = viewModel.image {
-				Image(uiImage: image)
-					.resizable()
-					.frame(width: 148, height: 148)
-					.cornerRadius(16)
-					.padding(.vertical, 24)
+	var body: some View {
+		VStack(spacing: 24) {
+			AsyncImage(url: model.image) { image in
+				image.resizable()
+			} placeholder: {
+				ProgressView()
+					.progressViewStyle(CircularProgressViewStyle(tint: Color(hex: Colors.green)))
 			}
-			
-			Text(model.name)
-				.foregroundColor(.white)
-				.font(.system(size: 22))
-				.fontWeight(.bold)
-				.padding(.bottom, 8)
-			
-			Text(model.status)
-				.foregroundColor(viewModel.statusColor(for: model.status))
-				.font(.system(size: 16))
-				.fontWeight(.medium)
-				.padding(.bottom, 8)
+			.frame(width: 148, height: 148)
+			.cornerRadius(16)
+
+			VStack(spacing: 8) {
+				Text(model.name)
+					.foregroundColor(.white)
+					.font(.system(size: 22))
+					.fontWeight(.bold)
+
+				Text(model.status)
+					.foregroundColor(model.statusColor())
+					.font(.system(size: 16))
+					.fontWeight(.medium)
+			}
 		}
-		.task {
-			viewModel.loadImage(for: model.image)
-		}
-    }
+	}
 }

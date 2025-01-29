@@ -28,12 +28,12 @@ final class DetailViewController: UIViewController {
         configureNavigationBar()
     }
 
+	// MARK: - Private
+
     private func configureNavigationBar() {
         navigationController?.navigationBar.tintColor = .white
         navigationItem.largeTitleDisplayMode = .never
     }
-
-	// MARK: - Private
 
     private func makeDetailView() {
 		let detailView = DetailView(viewModel: viewModel)

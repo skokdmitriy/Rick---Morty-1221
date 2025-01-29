@@ -87,17 +87,4 @@ final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 			}
 		}
 	}
-
-	func statusColor(for status: String) -> Color {
-		switch status {
-		case Constants.alive:
-			return Color(hex: Colors.green)
-		case Constants.dead:
-			return .red
-		case Constants.unknown:
-			return .orange
-		default:
-			return .gray
-		}
-	}
 }

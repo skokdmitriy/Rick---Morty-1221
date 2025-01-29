@@ -22,7 +22,8 @@ struct DetailView: View {
                     VStack(spacing: .zero) {
 
                         if let detailModel = viewModel.character {
-                            HeaderView(model: detailModel, viewModel: viewModel)
+							HeaderView(model: detailModel)
+//                            HeaderView(model: detailModel, viewModel: viewModel)
                             InfoSectionView(characterDetailModel: detailModel)
                             OriginSectionView(characterDetailModel: detailModel)
                             makeEpisodesSection()
