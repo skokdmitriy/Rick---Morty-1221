@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B6D1B662AA39EA2001B1C68 /* InfoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D1B652AA39EA2001B1C68 /* InfoSectionView.swift */; };
 		1B6D1B692AA39FD3001B1C68 /* OriginSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D1B682AA39FD3001B1C68 /* OriginSectionView.swift */; };
-		1B6D1B6B2AA3A0A0001B1C68 /* EpisodesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D1B6A2AA3A0A0001B1C68 /* EpisodesSectionView.swift */; };
+		1B6D1B6B2AA3A0A0001B1C68 /* EpisodeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D1B6A2AA3A0A0001B1C68 /* EpisodeRowView.swift */; };
 		1B7094512AB370DA00D9A61E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7094502AB370DA00D9A61E /* Router.swift */; };
 		1B8485F02ABB43D500ABC749 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8485EF2ABB43D500ABC749 /* Constants.swift */; };
 		1B9E62B72A8E6B1500E599D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E62B62A8E6B1500E599D2 /* AppDelegate.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		1B6D1B652AA39EA2001B1C68 /* InfoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSectionView.swift; sourceTree = "<group>"; };
 		1B6D1B682AA39FD3001B1C68 /* OriginSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginSectionView.swift; sourceTree = "<group>"; };
-		1B6D1B6A2AA3A0A0001B1C68 /* EpisodesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesSectionView.swift; sourceTree = "<group>"; };
+		1B6D1B6A2AA3A0A0001B1C68 /* EpisodeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRowView.swift; sourceTree = "<group>"; };
 		1B7094502AB370DA00D9A61E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1B8485EF2ABB43D500ABC749 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B9E62B32A8E6B1500E599D2 /* Rick & Morty 1221.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick & Morty 1221.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +117,7 @@
 				1B9E63222A95058900E599D2 /* HeaderView.swift */,
 				1B6D1B652AA39EA2001B1C68 /* InfoSectionView.swift */,
 				1B6D1B682AA39FD3001B1C68 /* OriginSectionView.swift */,
-				1B6D1B6A2AA3A0A0001B1C68 /* EpisodesSectionView.swift */,
+				1B6D1B6A2AA3A0A0001B1C68 /* EpisodeRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,8 +149,8 @@
 				1B9E62DB2A90893300E599D2 /* NetworkService */,
 				1BD54E962AA8E587001E3B05 /* Assembly */,
 				1B4467AE2AB8A47000EDBE5D /* Router */,
-				1B9E62CF2A8E733100E599D2 /* CharactersModule */,
-				1B9E62D82A8FA89C00E599D2 /* DetailsModule */,
+				1B9E62CF2A8E733100E599D2 /* CharactersScreen */,
+				1B9E62D82A8FA89C00E599D2 /* DetailsScreen */,
 			);
 			path = "Rick & Morty 1221";
 			sourceTree = "<group>";
@@ -181,14 +181,14 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		1B9E62CF2A8E733100E599D2 /* CharactersModule */ = {
+		1B9E62CF2A8E733100E599D2 /* CharactersScreen */ = {
 			isa = PBXGroup;
 			children = (
 				2C7B27022C57756300938F70 /* Model */,
 				2C7B27032C57756E00938F70 /* View */,
 				2C7B27052C57758B00938F70 /* ViewModel */,
 			);
-			path = CharactersModule;
+			path = CharactersScreen;
 			sourceTree = "<group>";
 		};
 		1B9E62D02A8E819300E599D2 /* Extension */ = {
@@ -201,14 +201,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		1B9E62D82A8FA89C00E599D2 /* DetailsModule */ = {
+		1B9E62D82A8FA89C00E599D2 /* DetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
 				1B9E63242A950F1B00E599D2 /* Model */,
 				2C7B27062C57759F00938F70 /* View */,
 				2C7B27072C5775BC00938F70 /* ViewModel */,
 			);
-			path = DetailsModule;
+			path = DetailsScreen;
 			sourceTree = "<group>";
 		};
 		1B9E62DB2A90893300E599D2 /* NetworkService */ = {
@@ -422,7 +422,7 @@
 				1B9E62CE2A8E731300E599D2 /* CharactersViewController.swift in Sources */,
 				1B6D1B692AA39FD3001B1C68 /* OriginSectionView.swift in Sources */,
 				1B9E62DD2A90898E00E599D2 /* NetworkService.swift in Sources */,
-				1B6D1B6B2AA3A0A0001B1C68 /* EpisodesSectionView.swift in Sources */,
+				1B6D1B6B2AA3A0A0001B1C68 /* EpisodeRowView.swift in Sources */,
 				1B9E62EA2A923E9A00E599D2 /* AssemblerModuleBuilder.swift in Sources */,
 				2C3E0A132D16868800DB8A55 /* CharactersViewProtocol.swift in Sources */,
 				1B9E62D22A8E81BB00E599D2 /* NavigationAppearance+Extension.swift in Sources */,

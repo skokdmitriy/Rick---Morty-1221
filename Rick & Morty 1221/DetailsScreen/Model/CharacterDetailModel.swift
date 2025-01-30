@@ -5,7 +5,7 @@
 //  Created by Дмитрий Скок on 22.08.2023.
 //
 
-import Foundation
+import SwiftUI
 
 struct CharacterDetailModel: Decodable {
     let name: String
@@ -16,6 +16,19 @@ struct CharacterDetailModel: Decodable {
     let origin: Location
     let image: URL
     let episode: [URL]
+
+	func statusColor() -> Color {
+		switch status {
+		case Constants.alive:
+			return Color(hex: Colors.green)
+		case Constants.dead:
+			return .red
+		case Constants.unknown:
+			return .orange
+		default:
+			return .gray
+		}
+	}
 }
 
 struct Location: Decodable {
