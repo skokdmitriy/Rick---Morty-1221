@@ -8,66 +8,48 @@
 import SwiftUI
 
 struct InfoSectionView: View {
-    let characterDetailModel: CharacterDetailModel
+	let model: CharacterDetailModel
+	private let placeholder: String = Constants.textNone
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: .zero) {
-            Text(Constants.textInfo)
-                .foregroundColor(.white)
-                .font(.system(size: 17))
-                .fontWeight(.semibold)
-                .frame(alignment: .topLeading)
-                .padding([.top, .bottom])
+	var body: some View {
+		VStack(alignment: .leading, spacing: 16) {
+			infoTitle
 
-            VStack(alignment: .leading, spacing: .zero) {
-                HStack {
-                    Text(Constants.textSpecies)
-                        .foregroundColor(Color.gray)
-                        .font(.system(size: 16))
-                        .fontWeight(.medium)
-
-                    Spacer()
-
-                    Text(characterDetailModel.species)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 16))
-                        .fontWeight(.medium)
-                }
-                .padding([.leading, .top, .trailing])
-
-                HStack {
-                    Text(Constants.textType)
-                        .foregroundColor(Color.gray)
-                        .font(.system(size: 16))
-                        .fontWeight(.medium)
-
-                    Spacer()
-
-                    Text(characterDetailModel.type.isEmpty ? Constants.textNone : characterDetailModel.type)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 16))
-                        .fontWeight(.medium)
-                }
-                .padding([.leading, .top, .trailing])
-
-                HStack {
-                    Text(Constants.textGender)
-                        .foregroundColor(Color.gray)
-                        .font(.system(size: 16))
-                        .fontWeight(.medium)
-
-                    Spacer()
-
-                    Text(characterDetailModel.gender)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 16))
-                        .fontWeight(.medium)
-                }
-                .padding()
-            }
+			VStack(spacing: 16) {
+				infoRow(label: Constants.textSpecies, value: model.species)
+				infoRow(label: Constants.textType, value: model.type)
+				infoRow(label: Constants.textGender, value: model.gender)
+			}
+			.padding()
 			.background(Color(hex: Colors.backgroundCell))
-            .cornerRadius(16)
-        }
-        .padding([.leading, .trailing, .bottom], 24)
-    }
+			.cornerRadius(16)
+		}
+	}
+}
+
+private extension InfoSectionView {
+
+	var infoTitle: some View {
+		Text(Constants.titleInfo)
+			.foregroundColor(.white)
+			.font(.system(size: 17))
+			.fontWeight(.semibold)
+			.frame(alignment: .topLeading)
+	}
+
+	func infoRow(label: String, value: String) -> some View {
+		 HStack {
+			Text(label)
+				.foregroundColor(Color.gray)
+				.font(.system(size: 16))
+				.fontWeight(.medium)
+
+			Spacer()
+
+			Text(value.isEmpty ? placeholder : value)
+				.foregroundColor(Color.white)
+				.font(.system(size: 16))
+				.fontWeight(.medium)
+		}
+	}
 }

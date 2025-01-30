@@ -16,7 +16,7 @@ protocol DetailViewModelProtocol: AnyObject {
     func fetchCharacterDetail() async
 }
 
-final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
+final class DetailViewModel: /*DetailViewModelProtocol,*/ ObservableObject {
 	@Published var episodes: [EpisodeModel] = []
 	@Published var character: CharacterDetailModel?
 	@Published var isLoading = true

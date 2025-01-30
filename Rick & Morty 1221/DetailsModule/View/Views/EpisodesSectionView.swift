@@ -35,6 +35,6 @@ struct EpisodeView: View {
         .padding()
         .background(Color(hex: Colors.backgroundCell))
         .cornerRadius(16)
-        .padding([.leading, .trailing, .bottom], 24)
+//        .padding([.leading, .trailing, .bottom], 24)
     }
 }

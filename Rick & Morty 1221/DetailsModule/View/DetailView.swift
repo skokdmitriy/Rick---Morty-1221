@@ -19,16 +19,15 @@ struct DetailView: View {
 					.progressViewStyle(CircularProgressViewStyle(tint: Color(hex: Colors.green)))
             } else {
                 ScrollView {
-                    VStack(spacing: .zero) {
-
+					VStack(spacing: 24) {
                         if let detailModel = viewModel.character {
 							HeaderView(model: detailModel)
-//                            HeaderView(model: detailModel, viewModel: viewModel)
-                            InfoSectionView(characterDetailModel: detailModel)
+                            InfoSectionView(model: detailModel)
                             OriginSectionView(characterDetailModel: detailModel)
                             makeEpisodesSection()
                         }
                     }
+					.padding(.horizontal, 24)
                 }
             }
         }

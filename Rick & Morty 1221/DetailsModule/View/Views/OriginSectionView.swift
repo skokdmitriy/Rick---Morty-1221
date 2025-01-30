@@ -11,15 +11,13 @@ struct OriginSectionView: View {
     let characterDetailModel: CharacterDetailModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: .zero) {
+		VStack(alignment: .leading, spacing: 16) {
             Text(Constants.textOrigin)
                 .foregroundColor(.white)
                 .font(.system(size: 17))
                 .fontWeight(.semibold)
-                .frame(alignment: .topLeading)
-                .padding(.bottom)
 
-            HStack(spacing: .zero) {
+            HStack {
                 ZStack {
                     Image(Icons.planetIcon)
                 }
@@ -38,12 +36,12 @@ struct OriginSectionView: View {
                         .font(.system(size: 13))
                         .fontWeight(.medium)
                 }
+
                 Spacer()
             }
             .padding([.leading, .bottom, .top], 8)
             .background(Color(hex: Colors.backgroundCell))
             .cornerRadius(16)
         }
-        .padding([.leading, .trailing, .bottom], 24)
     }
 }
