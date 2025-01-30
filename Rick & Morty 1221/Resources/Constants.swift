@@ -16,7 +16,7 @@ public enum Constants {
     static let title = "Characters"
     static let alertTitle = "Произошла ошибка"
     static let textEpisodes = "Episodes"
-    static let textInfo = "Info"
+    static let titleInfo = "Info"
     static let textSpecies = "Species:"
     static let textType = "Type:"
     static let textNone = "None"

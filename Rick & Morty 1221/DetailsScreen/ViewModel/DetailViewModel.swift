@@ -7,13 +7,13 @@
 
 import SwiftUI
 
+@MainActor
 protocol DetailViewModelProtocol: AnyObject {
-	init (networkManager: NetworkServiceProtocol, router: RouterProtocol, urlCharacter: URL)
+	init (networkManager: NetworkServiceProtocol, router: RouterProtocol, urlCharacter: URL) async
 	var episodes: [EpisodeModel] { get set }
 	var character: CharacterDetailModel? { get set }
 	var isLoading: Bool { get set }
 	var image: UIImage? { get set }
-    func fetchCharacterDetail() async
 }
 
 final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
@@ -35,45 +35,56 @@ final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 		self.router = router
 	}
 
-	func fetchCharacterDetail() async {
-			do {
-				character = try await networkService.fetchRequest(
-					modelType: CharacterDetailModel.self,
-					with: urlCharacter
-				)
-				await fetchEpisodes()
-				isLoading = false
-			} catch {
-				print("error fetch character")
-			}
+	func task() async {
+		await fetchCharacterDetail()
+		loadImage()
 	}
 
-	private func fetchEpisodes() async {
-		guard let episodes = character?.episode else { return }
+	// MARK: - Private
 
-		await withTaskGroup(of: EpisodeModel?.self) { group in
-			for url in episodes {
-				group.addTask {
-					do {
-						return try await self.networkService.fetchRequest(
-							modelType: EpisodeModel.self,
-							with: url
-						)
-					} catch {
-						print("Error fetching episode: \(error)")
-						return nil
-					}
-				}
-			}
+	private func fetchCharacterDetail() async {
 
-			for await episode in group.compactMap({ $0 }) {
-					self.episodes.append(episode)
-
-			}
+		do {
+			character = try await networkService.fetchRequest(
+				modelType: CharacterDetailModel.self,
+				with: urlCharacter
+			)
+			await fetchEpisodes()
+			isLoading = false
+		} catch {
+			print("Failed to fetch character: \(error)")
 		}
 	}
 
-	func loadImage(for url: URL) {
+	private func fetchEpisodes() async {
+		guard let urls = character?.episode else { return }
+
+		do {
+			self.episodes = try await withThrowingTaskGroup(of: EpisodeModel?.self) { group in
+				for url in urls {
+					group.addTask {
+						try await self.networkService.fetchRequest(
+							modelType: EpisodeModel.self,
+							with: url
+						)
+					}
+				}
+				var episodes: [EpisodeModel] = []
+				for try await episode in group {
+					if let episode = episode {
+						episodes.append(episode)
+					}
+				}
+				return episodes.sorted { $0.id < $1.id }
+			}
+			
+		} catch {
+			print("Failed to fetch episodes: \(error)")
+		}
+	}
+
+	private func loadImage() {
+		guard let url = character?.image else { return }
 		loadTask?.cancel()
 
 		loadTask = Task { [weak self] in
@@ -85,19 +96,6 @@ final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 			} catch {
 				print("error")
 			}
-		}
-	}
-
-	func statusColor(for status: String) -> Color {
-		switch status {
-		case Constants.alive:
-			return Color(hex: Colors.green)
-		case Constants.dead:
-			return .red
-		case Constants.unknown:
-			return .orange
-		default:
-			return .gray
 		}
 	}
 }
