@@ -13,7 +13,7 @@ protocol AssemblyBuilderProtocol {
 }
 
 final class AssemblerModuleBuilder: AssemblyBuilderProtocol {
-    func createCharacterModule(router: RouterProtocol) -> UIViewController {
+	func createCharacterModule(router: RouterProtocol) -> UIViewController {
         let networkManager = NetworkService()
         let viewController = CharactersViewController()
         let viewModel = CharacterViewModel(
@@ -24,7 +24,8 @@ final class AssemblerModuleBuilder: AssemblyBuilderProtocol {
         return viewController
     }
 
-    func createDetailModule(urlCharacter: URL, router: RouterProtocol) -> UIViewController {
+	@MainActor 
+	func createDetailModule(urlCharacter: URL, router: RouterProtocol) -> UIViewController {
         let networkManager = NetworkService()
         let viewModel = DetailViewModel(
             networkManager: networkManager,

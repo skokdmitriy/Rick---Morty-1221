@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OriginSectionView: View {
-    let characterDetailModel: CharacterDetailModel
+    let model: CharacterDetailModel
 
     var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
@@ -27,7 +27,7 @@ struct OriginSectionView: View {
                 .padding(.trailing, 16)
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(characterDetailModel.origin.name)
+                    Text(model.origin.name)
                         .foregroundColor(.white)
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
