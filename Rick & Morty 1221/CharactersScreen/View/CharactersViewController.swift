@@ -117,7 +117,7 @@ extension CharactersViewController: UICollectionViewDelegate {
 		forItemAt indexPath: IndexPath
 	) {
 		let buffer = 4
-		if indexPath.row == viewModel.characters?.count ?? 0 - buffer && !viewModel.isLoading {
+		if indexPath.row == (viewModel.characters?.count ?? 0) - buffer && !viewModel.isLoading {
 			Task {
 				await viewModel.fetchNextCharacters()
 			}
