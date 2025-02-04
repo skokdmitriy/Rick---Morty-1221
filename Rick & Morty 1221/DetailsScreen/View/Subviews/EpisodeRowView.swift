@@ -14,21 +14,18 @@ struct EpisodeRowView: View {
 		VStack(alignment: .leading, spacing: 16) {
 			Text(model.name)
 				.foregroundColor(.white)
-				.font(.system(size: 17))
-				.fontWeight(.semibold)
+				.font(.title5)
 
 			HStack {
 				Text(model.episode)
 					.foregroundColor(Color(hex: Colors.green))
-					.font(.system(size: 13))
-					.fontWeight(.medium)
+					.font(.bodySmall)
 
 				Spacer()
 
 				Text(model.airDate)
 					.foregroundColor(.gray)
-					.font(.system(size: 12))
-					.fontWeight(.medium)
+					.font(.bodyExtraSmall)
 			}
 		}
 		.padding()

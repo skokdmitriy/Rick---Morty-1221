@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         router.initialViewController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+
+		CustomFontManager.registrationCustomFounts()
         return true
     }
 }

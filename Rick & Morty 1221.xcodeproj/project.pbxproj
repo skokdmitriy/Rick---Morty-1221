@@ -30,6 +30,23 @@
 		1B9E63232A95058900E599D2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E63222A95058900E599D2 /* HeaderView.swift */; };
 		2C3E0A112D16864500DB8A55 /* CharactersViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E0A102D16864500DB8A55 /* CharactersViewModelProtocol.swift */; };
 		2C3E0A132D16868800DB8A55 /* CharactersViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E0A122D16868800DB8A55 /* CharactersViewProtocol.swift */; };
+		2C5D03072D4F41F100077CFD /* DetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D03062D4F41F100077CFD /* DetailViewModelProtocol.swift */; };
+		2C5D03202D4F478700077CFD /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D030C2D4F478600077CFD /* Gilroy-Light.ttf */; };
+		2C5D03232D4F478700077CFD /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D030F2D4F478600077CFD /* Gilroy-Heavy.ttf */; };
+		2C5D03242D4F478700077CFD /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D03102D4F478600077CFD /* Gilroy-Medium.ttf */; };
+		2C5D03252D4F478700077CFD /* Gilroy-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D03112D4F478600077CFD /* Gilroy-UltraLight.ttf */; };
+		2C5D03262D4F478700077CFD /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D03122D4F478600077CFD /* Gilroy-ExtraBold.ttf */; };
+		2C5D03272D4F478700077CFD /* Gilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D03132D4F478600077CFD /* Gilroy-Black.ttf */; };
+		2C5D03292D4F478700077CFD /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D03152D4F478600077CFD /* Gilroy-Bold.ttf */; };
+		2C5D032A2D4F478700077CFD /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D03162D4F478600077CFD /* Gilroy-Regular.ttf */; };
+		2C5D032D2D4F478700077CFD /* Gilroy-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D03192D4F478600077CFD /* Gilroy-Thin.ttf */; };
+		2C5D032F2D4F478700077CFD /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D031B2D4F478700077CFD /* Gilroy-SemiBold.ttf */; };
+		2C5D03322D4F496100077CFD /* CustomFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D03312D4F496100077CFD /* CustomFontManager.swift */; };
+		2C5D03392D4FD79400077CFD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D03382D4FD79400077CFD /* Fonts.swift */; };
+		2C5D033B2D4FDED000077CFD /* FontsImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D033A2D4FDED000077CFD /* FontsImp.swift */; };
+		2C5D033D2D525C2A00077CFD /* Weight+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D033C2D525C2A00077CFD /* Weight+Extension.swift */; };
+		2C5D033F2D525F0A00077CFD /* CustomFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D033E2D525F0A00077CFD /* CustomFont+Extension.swift */; };
+		2C5D03412D5263AD00077CFD /* Fonts+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D03402D5263AD00077CFD /* Fonts+Extension.swift */; };
 		2C7B27012C576B7C00938F70 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B27002C576B7C00938F70 /* Color+Extension.swift */; };
 		2C8219EB2D0FFDFF009AFD6A /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8219EA2D0FFDFF009AFD6A /* ImageLoaderService.swift */; };
 		2C8219ED2D100027009AFD6A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8219EC2D100027009AFD6A /* UIImageView+Extension.swift */; };
@@ -72,6 +89,23 @@
 		2C3C337D2BD9605D007DFB02 /* Rick & Morty 1221Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick & Morty 1221Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3E0A102D16864500DB8A55 /* CharactersViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModelProtocol.swift; sourceTree = "<group>"; };
 		2C3E0A122D16868800DB8A55 /* CharactersViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewProtocol.swift; sourceTree = "<group>"; };
+		2C5D03062D4F41F100077CFD /* DetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		2C5D030C2D4F478600077CFD /* Gilroy-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		2C5D030F2D4F478600077CFD /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
+		2C5D03102D4F478600077CFD /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		2C5D03112D4F478600077CFD /* Gilroy-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.ttf"; sourceTree = "<group>"; };
+		2C5D03122D4F478600077CFD /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2C5D03132D4F478600077CFD /* Gilroy-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.ttf"; sourceTree = "<group>"; };
+		2C5D03152D4F478600077CFD /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		2C5D03162D4F478600077CFD /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
+		2C5D03192D4F478600077CFD /* Gilroy-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.ttf"; sourceTree = "<group>"; };
+		2C5D031B2D4F478700077CFD /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
+		2C5D03312D4F496100077CFD /* CustomFontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontManager.swift; sourceTree = "<group>"; };
+		2C5D03382D4FD79400077CFD /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		2C5D033A2D4FDED000077CFD /* FontsImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsImp.swift; sourceTree = "<group>"; };
+		2C5D033C2D525C2A00077CFD /* Weight+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+Extension.swift"; sourceTree = "<group>"; };
+		2C5D033E2D525F0A00077CFD /* CustomFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFont+Extension.swift"; sourceTree = "<group>"; };
+		2C5D03402D5263AD00077CFD /* Fonts+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Extension.swift"; sourceTree = "<group>"; };
 		2C7B27002C576B7C00938F70 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		2C8219EA2D0FFDFF009AFD6A /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		2C8219EC2D100027009AFD6A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -107,11 +141,12 @@
 			isa = PBXGroup;
 			children = (
 				1B9E62D02A8E819300E599D2 /* Extension */,
+				2C5D03342D4F4BB300077CFD /* FontManager */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		1B6D1B632AA0E2EB001B1C68 /* Views */ = {
+		1B6D1B632AA0E2EB001B1C68 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				1B9E63222A95058900E599D2 /* HeaderView.swift */,
@@ -119,7 +154,7 @@
 				1B6D1B682AA39FD3001B1C68 /* OriginSectionView.swift */,
 				1B6D1B6A2AA3A0A0001B1C68 /* EpisodeRowView.swift */,
 			);
-			path = Views;
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		1B9E62AA2A8E6B1500E599D2 = {
@@ -142,11 +177,12 @@
 		1B9E62B52A8E6B1500E599D2 /* Rick & Morty 1221 */ = {
 			isa = PBXGroup;
 			children = (
+				2C5D03352D4F4BCB00077CFD /* UIkit */,
 				1B9E62CA2A8E6C3300E599D2 /* Application */,
 				1B9E62CC2A8E6C8400E599D2 /* SupportingFiles */,
 				1B9E62CB2A8E6C6600E599D2 /* Resources */,
 				1B4467AF2AB8A4D300EDBE5D /* Helpers */,
-				1B9E62DB2A90893300E599D2 /* NetworkService */,
+				2C5D03332D4F499100077CFD /* Services */,
 				1BD54E962AA8E587001E3B05 /* Assembly */,
 				1B4467AE2AB8A47000EDBE5D /* Router */,
 				1B9E62CF2A8E733100E599D2 /* CharactersScreen */,
@@ -166,6 +202,7 @@
 		1B9E62CB2A8E6C6600E599D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C5D03082D4F475E00077CFD /* Founds */,
 				1B8485EF2ABB43D500ABC749 /* Constants.swift */,
 				1B9E62BF2A8E6B1500E599D2 /* Assets.xcassets */,
 			);
@@ -237,12 +274,65 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
-		2C3E0A142D16C3E600DB8A55 /* Subview */ = {
+		2C3E0A142D16C3E600DB8A55 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				1B9E62D32A8E882600E599D2 /* CharacterCollectionViewCell.swift */,
 			);
-			path = Subview;
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		2C5D03082D4F475E00077CFD /* Founds */ = {
+			isa = PBXGroup;
+			children = (
+				2C5D03132D4F478600077CFD /* Gilroy-Black.ttf */,
+				2C5D03152D4F478600077CFD /* Gilroy-Bold.ttf */,
+				2C5D03122D4F478600077CFD /* Gilroy-ExtraBold.ttf */,
+				2C5D030F2D4F478600077CFD /* Gilroy-Heavy.ttf */,
+				2C5D030C2D4F478600077CFD /* Gilroy-Light.ttf */,
+				2C5D03102D4F478600077CFD /* Gilroy-Medium.ttf */,
+				2C5D03162D4F478600077CFD /* Gilroy-Regular.ttf */,
+				2C5D031B2D4F478700077CFD /* Gilroy-SemiBold.ttf */,
+				2C5D03192D4F478600077CFD /* Gilroy-Thin.ttf */,
+				2C5D03112D4F478600077CFD /* Gilroy-UltraLight.ttf */,
+			);
+			path = Founds;
+			sourceTree = "<group>";
+		};
+		2C5D03332D4F499100077CFD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1B9E62DB2A90893300E599D2 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2C5D03342D4F4BB300077CFD /* FontManager */ = {
+			isa = PBXGroup;
+			children = (
+				2C5D03312D4F496100077CFD /* CustomFontManager.swift */,
+			);
+			path = FontManager;
+			sourceTree = "<group>";
+		};
+		2C5D03352D4F4BCB00077CFD /* UIkit */ = {
+			isa = PBXGroup;
+			children = (
+				2C5D03372D4F4BF100077CFD /* Fonts */,
+			);
+			path = UIkit;
+			sourceTree = "<group>";
+		};
+		2C5D03372D4F4BF100077CFD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2C5D03382D4FD79400077CFD /* Fonts.swift */,
+				2C5D033A2D4FDED000077CFD /* FontsImp.swift */,
+				2C5D033C2D525C2A00077CFD /* Weight+Extension.swift */,
+				2C5D033E2D525F0A00077CFD /* CustomFont+Extension.swift */,
+				2C5D03402D5263AD00077CFD /* Fonts+Extension.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2C7B27022C57756300938F70 /* Model */ = {
@@ -257,7 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				1B9E62CD2A8E731300E599D2 /* CharactersViewController.swift */,
-				2C3E0A142D16C3E600DB8A55 /* Subview */,
+				2C3E0A142D16C3E600DB8A55 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,7 +367,7 @@
 			children = (
 				1B9E62E42A90C31E00E599D2 /* DetailViewController.swift */,
 				1B9E62D92A8FA8E400E599D2 /* DetailView.swift */,
-				1B6D1B632AA0E2EB001B1C68 /* Views */,
+				1B6D1B632AA0E2EB001B1C68 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				1B9E62ED2A9267F500E599D2 /* DetailViewModel.swift */,
+				2C5D03062D4F41F100077CFD /* DetailViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -374,8 +465,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5D03262D4F478700077CFD /* Gilroy-ExtraBold.ttf in Resources */,
 				1B9E62C32A8E6B1500E599D2 /* LaunchScreen.storyboard in Resources */,
+				2C5D032A2D4F478700077CFD /* Gilroy-Regular.ttf in Resources */,
+				2C5D032F2D4F478700077CFD /* Gilroy-SemiBold.ttf in Resources */,
 				1B9E62C02A8E6B1500E599D2 /* Assets.xcassets in Resources */,
+				2C5D03252D4F478700077CFD /* Gilroy-UltraLight.ttf in Resources */,
+				2C5D03202D4F478700077CFD /* Gilroy-Light.ttf in Resources */,
+				2C5D03272D4F478700077CFD /* Gilroy-Black.ttf in Resources */,
+				2C5D032D2D4F478700077CFD /* Gilroy-Thin.ttf in Resources */,
+				2C5D03232D4F478700077CFD /* Gilroy-Heavy.ttf in Resources */,
+				2C5D03242D4F478700077CFD /* Gilroy-Medium.ttf in Resources */,
+				2C5D03292D4F478700077CFD /* Gilroy-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,9 +516,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5D03072D4F41F100077CFD /* DetailViewModelProtocol.swift in Sources */,
+				2C5D033B2D4FDED000077CFD /* FontsImp.swift in Sources */,
 				1B9E62E12A90994300E599D2 /* CharacterModel.swift in Sources */,
 				2C7B27012C576B7C00938F70 /* Color+Extension.swift in Sources */,
 				1B9E62DA2A8FA8E400E599D2 /* DetailView.swift in Sources */,
+				2C5D03412D5263AD00077CFD /* Fonts+Extension.swift in Sources */,
 				1B9E63232A95058900E599D2 /* HeaderView.swift in Sources */,
 				1B9E62CE2A8E731300E599D2 /* CharactersViewController.swift in Sources */,
 				1B6D1B692AA39FD3001B1C68 /* OriginSectionView.swift in Sources */,
@@ -430,6 +534,7 @@
 				2C8219EB2D0FFDFF009AFD6A /* ImageLoaderService.swift in Sources */,
 				1B8485F02ABB43D500ABC749 /* Constants.swift in Sources */,
 				2C3E0A112D16864500DB8A55 /* CharactersViewModelProtocol.swift in Sources */,
+				2C5D033F2D525F0A00077CFD /* CustomFont+Extension.swift in Sources */,
 				1B9E63212A94F0D500E599D2 /* CharacterDetailModel.swift in Sources */,
 				1B7094512AB370DA00D9A61E /* Router.swift in Sources */,
 				1B9E62D42A8E882600E599D2 /* CharacterCollectionViewCell.swift in Sources */,
@@ -438,7 +543,10 @@
 				1B6D1B662AA39EA2001B1C68 /* InfoSectionView.swift in Sources */,
 				1B9E62FB2A93D7FD00E599D2 /* EpisodeModel.swift in Sources */,
 				1B9E62E32A909F6F00E599D2 /* CharacterViewModel.swift in Sources */,
+				2C5D033D2D525C2A00077CFD /* Weight+Extension.swift in Sources */,
 				1B9E62B72A8E6B1500E599D2 /* AppDelegate.swift in Sources */,
+				2C5D03392D4FD79400077CFD /* Fonts.swift in Sources */,
+				2C5D03322D4F496100077CFD /* CustomFontManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
