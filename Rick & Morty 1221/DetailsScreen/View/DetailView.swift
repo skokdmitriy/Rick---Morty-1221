@@ -45,9 +45,7 @@ private extension DetailView {
 		LazyVStack(alignment: .leading, spacing: 16) {
 			Text(Constants.textEpisodes)
 				.foregroundColor(.white)
-				.font(.system(size: 17))
-				.fontWeight(.semibold)
-
+				.font(.title5)
 			ForEach(viewModel.episodes) { episode in
 				EpisodeRowView(model: episode)
 			}

@@ -21,13 +21,11 @@ struct HeaderView: View {
 			VStack(spacing: 8) {
 				Text(model.name)
 					.foregroundColor(.white)
-					.font(.system(size: 22))
-					.fontWeight(.bold)
+					.font(.title3)
 
 				Text(model.status)
 					.foregroundColor(model.statusColor())
-					.font(.system(size: 16))
-					.fontWeight(.medium)
+					.font(.body)
 			}
 		}
 		.padding(.top, 16)

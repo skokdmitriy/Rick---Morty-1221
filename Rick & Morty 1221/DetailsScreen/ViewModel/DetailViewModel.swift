@@ -8,14 +8,6 @@
 import SwiftUI
 
 @MainActor
-protocol DetailViewModelProtocol: AnyObject {
-	init (networkManager: NetworkServiceProtocol, router: RouterProtocol, urlCharacter: URL) async
-	var episodes: [EpisodeModel] { get set }
-	var character: CharacterDetailModel? { get set }
-	var isLoading: Bool { get set }
-	var image: UIImage? { get set }
-}
-
 final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 	@Published var episodes: [EpisodeModel] = []
 	@Published var character: CharacterDetailModel?

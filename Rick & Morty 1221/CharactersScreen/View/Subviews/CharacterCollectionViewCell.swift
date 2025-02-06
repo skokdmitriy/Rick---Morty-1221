@@ -21,7 +21,7 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
 
 	private lazy var nameCharacter: UILabel = {
 		let label = UILabel()
-		label.font = .systemFont(ofSize: 17)
+		label.font = .title5
 		label.textColor = .white
 		label.translatesAutoresizingMaskIntoConstraints = false
 		return label
