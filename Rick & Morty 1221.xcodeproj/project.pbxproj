@@ -47,6 +47,7 @@
 		2C5D033D2D525C2A00077CFD /* Weight+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D033C2D525C2A00077CFD /* Weight+Extension.swift */; };
 		2C5D033F2D525F0A00077CFD /* CustomFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D033E2D525F0A00077CFD /* CustomFont+Extension.swift */; };
 		2C5D03412D5263AD00077CFD /* Fonts+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D03402D5263AD00077CFD /* Fonts+Extension.swift */; };
+		2C5D03432D54EE9600077CFD /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D03422D54EE9600077CFD /* UIFont+Extension.swift */; };
 		2C7B27012C576B7C00938F70 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B27002C576B7C00938F70 /* Color+Extension.swift */; };
 		2C8219EB2D0FFDFF009AFD6A /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8219EA2D0FFDFF009AFD6A /* ImageLoaderService.swift */; };
 		2C8219ED2D100027009AFD6A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8219EC2D100027009AFD6A /* UIImageView+Extension.swift */; };
@@ -106,6 +107,7 @@
 		2C5D033C2D525C2A00077CFD /* Weight+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weight+Extension.swift"; sourceTree = "<group>"; };
 		2C5D033E2D525F0A00077CFD /* CustomFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomFont+Extension.swift"; sourceTree = "<group>"; };
 		2C5D03402D5263AD00077CFD /* Fonts+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fonts+Extension.swift"; sourceTree = "<group>"; };
+		2C5D03422D54EE9600077CFD /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		2C7B27002C576B7C00938F70 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		2C8219EA2D0FFDFF009AFD6A /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		2C8219EC2D100027009AFD6A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				2C5D033C2D525C2A00077CFD /* Weight+Extension.swift */,
 				2C5D033E2D525F0A00077CFD /* CustomFont+Extension.swift */,
 				2C5D03402D5263AD00077CFD /* Fonts+Extension.swift */,
+				2C5D03422D54EE9600077CFD /* UIFont+Extension.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				1B9E62EA2A923E9A00E599D2 /* AssemblerModuleBuilder.swift in Sources */,
 				2C3E0A132D16868800DB8A55 /* CharactersViewProtocol.swift in Sources */,
 				1B9E62D22A8E81BB00E599D2 /* NavigationAppearance+Extension.swift in Sources */,
+				2C5D03432D54EE9600077CFD /* UIFont+Extension.swift in Sources */,
 				1B9E62EE2A9267F500E599D2 /* DetailViewModel.swift in Sources */,
 				2C8219EB2D0FFDFF009AFD6A /* ImageLoaderService.swift in Sources */,
 				1B8485F02ABB43D500ABC749 /* Constants.swift in Sources */,
