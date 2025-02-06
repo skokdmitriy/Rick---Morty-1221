@@ -14,8 +14,7 @@ struct OriginSectionView: View {
 		VStack(alignment: .leading, spacing: 16) {
             Text(Constants.textOrigin)
                 .foregroundColor(.white)
-                .font(.system(size: 17))
-                .fontWeight(.semibold)
+				.font(.title5)
 
             HStack {
                 ZStack {
@@ -29,12 +28,11 @@ struct OriginSectionView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(model.origin.name)
                         .foregroundColor(.white)
-                        .font(.system(size: 17))
-                        .fontWeight(.semibold)
+						.font(.title5)
+
                     Text(Constants.textPlanet)
 						.foregroundColor(Color(hex: Colors.green))
-                        .font(.system(size: 13))
-                        .fontWeight(.medium)
+                        .font(.bodySmall)
                 }
 
                 Spacer()

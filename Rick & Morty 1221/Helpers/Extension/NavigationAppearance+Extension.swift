@@ -9,13 +9,26 @@ import UIKit
 
 extension UINavigationController {
     func setupNavigationController() {
-        let coloredAppearance = UINavigationBarAppearance()
-        coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = UIColor(hex: Colors.background)
-        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-        UINavigationBar.appearance().compactAppearance = coloredAppearance
-    }
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.backgroundColor = UIColor(hex: Colors.background)
+
+		let titleFont = UIFont.title5
+		let largeTitleFont = UIFont.title2
+
+        navigationBarAppearance.titleTextAttributes = [
+			.foregroundColor: UIColor.white,
+			.font: titleFont
+		]
+
+        navigationBarAppearance.largeTitleTextAttributes = [
+			.foregroundColor: UIColor.white,
+			.font: largeTitleFont,
+			NSAttributedString.Key.baselineOffset: 31
+		]
+
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+	}
 }

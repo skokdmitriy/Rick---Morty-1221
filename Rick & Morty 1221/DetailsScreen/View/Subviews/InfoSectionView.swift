@@ -32,8 +32,7 @@ private extension InfoSectionView {
 	var infoTitle: some View {
 		Text(Constants.titleInfo)
 			.foregroundColor(.white)
-			.font(.system(size: 17))
-			.fontWeight(.semibold)
+			.font(.title5)
 			.frame(alignment: .topLeading)
 	}
 
@@ -41,15 +40,13 @@ private extension InfoSectionView {
 		 HStack {
 			Text(label)
 				.foregroundColor(Color.gray)
-				.font(.system(size: 16))
-				.fontWeight(.medium)
+				.font(.body)
 
 			Spacer()
 
 			Text(value.isEmpty ? placeholder : value)
 				.foregroundColor(Color.white)
-				.font(.system(size: 16))
-				.fontWeight(.medium)
+				.font(.body)
 		}
 	}
 }
