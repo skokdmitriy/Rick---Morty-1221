@@ -33,7 +33,7 @@ struct DetailView: View {
             }
         }
 		.task {
-			await viewModel.task()
+			viewModel.task()
 		}
     }
 }
