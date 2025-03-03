@@ -9,51 +9,63 @@ import SwiftUI
 
 @MainActor
 final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
-	@Published var episodes: [EpisodeModel] = []
-	@Published var character: CharacterDetailModel?
+	@Published private(set) var episodes: [EpisodeModel] = []
+	@Published private(set) var character: CharacterDetailModel?
+	@Published private(set) var image: UIImage?
 	@Published var isLoading = true
-	@Published var image: UIImage?
 
 	private var loadTask: Task<Void, Never>?
-	private let imageLoader = ImageLoaderService()
 
 	private let router: RouterProtocol?
 	private let networkService: NetworkServiceProtocol
+	private let imageLoader: ImageLoaderService
 	private let urlCharacter: URL
 
-	required init(networkManager: NetworkServiceProtocol, router: RouterProtocol, urlCharacter: URL) {
-		self.networkService = networkManager
-		self.urlCharacter = urlCharacter
+	required init(
+		router: RouterProtocol,
+		networkService: NetworkServiceProtocol,
+		imageLoader: ImageLoaderService,
+		urlCharacter: URL
+	) {
 		self.router = router
+		self.networkService = networkService
+		self.imageLoader = imageLoader
+		self.urlCharacter = urlCharacter
 	}
 
-	func task() async {
-		await fetchCharacterDetail()
-		loadImage()
+	func task() {
+		loadTask?.cancel()
+		loadTask = Task {
+			await fetchCharacterDetail()
+		}
 	}
 
 	// MARK: - Private
 
 	private func fetchCharacterDetail() async {
-
 		do {
-			character = try await networkService.fetchRequest(
+			let fetchCharacter = try await networkService.fetchRequest(
 				modelType: CharacterDetailModel.self,
 				with: urlCharacter
 			)
-			await fetchEpisodes()
+
+			self.character = fetchCharacter
+
+			async let episodesTask = fetchEpisodes(for: character?.episode ?? [])
+			async let imageTask = loadImage(for: character?.image)
+			self.episodes = await (try? episodesTask) ?? []
+			self.image = await (try? imageTask)
+
 			isLoading = false
 		} catch {
 			print("Failed to fetch character: \(error)")
 		}
 	}
 
-	private func fetchEpisodes() async {
-		guard let urls = character?.episode else { return }
-
-		do {
-			self.episodes = try await withThrowingTaskGroup(of: EpisodeModel?.self) { group in
-				for url in urls {
+	private func fetchEpisodes(for urls: [URL?]) async throws -> [EpisodeModel] {
+		try await withThrowingTaskGroup(of: EpisodeModel?.self) { group in
+			for url in urls {
+				if let url = url {
 					group.addTask {
 						try await self.networkService.fetchRequest(
 							modelType: EpisodeModel.self,
@@ -61,33 +73,20 @@ final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 						)
 					}
 				}
-				var episodes: [EpisodeModel] = []
-				for try await episode in group {
-					if let episode = episode {
-						episodes.append(episode)
-					}
-				}
-				return episodes.sorted { $0.id < $1.id }
 			}
-			
-		} catch {
-			print("Failed to fetch episodes: \(error)")
+
+			var results: [EpisodeModel] = []
+			for try await episode in group {
+				if let episode = episode {
+					results.append(episode)
+				}
+			}
+			return results.sorted { $0.id < $1.id }
 		}
 	}
 
-	private func loadImage() {
-		guard let url = character?.image else { return }
-		loadTask?.cancel()
-
-		loadTask = Task { [weak self] in
-			guard let self else { return }
-
-			do {
-				async let image = try await self.imageLoader.loadImage(for: url)
-				self.image = try await image
-			} catch {
-				print("error")
-			}
-		}
+	private func loadImage(for url: URL?) async throws -> UIImage? {
+		guard let url else { return nil }
+		return try await imageLoader.loadImage(for: url)
 	}
 }

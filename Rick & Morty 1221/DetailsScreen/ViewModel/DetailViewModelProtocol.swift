@@ -9,9 +9,17 @@ import UIKit
 
 @MainActor
 protocol DetailViewModelProtocol: AnyObject {
-	init (networkManager: NetworkServiceProtocol, router: RouterProtocol, urlCharacter: URL) async
-	var episodes: [EpisodeModel] { get set }
-	var character: CharacterDetailModel? { get set }
+	var episodes: [EpisodeModel] { get }
+	var character: CharacterDetailModel? { get }
 	var isLoading: Bool { get set }
-	var image: UIImage? { get set }
+	var image: UIImage? { get }
+
+	init(
+		router: RouterProtocol,
+		networkService: NetworkServiceProtocol,
+		imageLoader: ImageLoaderService,
+		urlCharacter: URL
+	)
+
+	func task()
 }

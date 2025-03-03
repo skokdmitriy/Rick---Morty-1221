@@ -26,10 +26,12 @@ final class AssemblerModuleBuilder: AssemblyBuilderProtocol {
 
 	@MainActor 
 	func createDetailModule(urlCharacter: URL, router: RouterProtocol) -> UIViewController {
-        let networkManager = NetworkService()
+        let networkService = NetworkService()
+		let imageLoaderService = ImageLoaderService()
         let viewModel = DetailViewModel(
-            networkManager: networkManager,
-            router: router,
+			router: router,
+			networkService: networkService,
+			imageLoader: imageLoaderService,
 			urlCharacter: urlCharacter)
         let viewController = DetailViewController(viewModel: viewModel)
         return viewController
