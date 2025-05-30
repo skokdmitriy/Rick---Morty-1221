@@ -12,6 +12,8 @@ public enum Constants {
     static let badData = "Ваши данные - плохие..."
     static let badRequest = "С запросом точно все ок?"
 	static let badDecode = "Не удалось декодировать"
+    static let badResponse = "Сервер вернул некорректный ответ."
+    static let unexpectedError = "Неожиданная ошибка. Проверьте интернет соединение"
     static let cellIdentifier = "cellIdentifier"
     static let title = "Characters"
     static let alertTitle = "Произошла ошибка"

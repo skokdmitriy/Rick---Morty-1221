@@ -24,7 +24,6 @@ final class AssemblerModuleBuilder: AssemblyBuilderProtocol {
         return viewController
     }
 
-	@MainActor 
 	func createDetailModule(urlCharacter: URL, router: RouterProtocol) -> UIViewController {
         let networkService = NetworkService()
 		let imageLoaderService = ImageLoaderService()

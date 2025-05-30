@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-@MainActor
 final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 	@Published private(set) var episodes: [EpisodeModel] = []
 	@Published private(set) var character: CharacterDetailModel?
 	@Published private(set) var image: UIImage?
 	@Published var isLoading = true
+	@Published var showError = false
+	@Published var error: String?
 
 	private var loadTask: Task<Void, Never>?
 
@@ -21,7 +22,7 @@ final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 	private let imageLoader: ImageLoaderService
 	private let urlCharacter: URL
 
-	required init(
+	init(
 		router: RouterProtocol,
 		networkService: NetworkServiceProtocol,
 		imageLoader: ImageLoaderService,
@@ -41,7 +42,8 @@ final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 	}
 
 	// MARK: - Private
-
+   
+    @MainActor
 	private func fetchCharacterDetail() async {
 		do {
 			let fetchCharacter = try await networkService.fetchRequest(
@@ -53,12 +55,31 @@ final class DetailViewModel: DetailViewModelProtocol, ObservableObject {
 
 			async let episodesTask = fetchEpisodes(for: character?.episode ?? [])
 			async let imageTask = loadImage(for: character?.image)
-			self.episodes = await (try? episodesTask) ?? []
-			self.image = await (try? imageTask)
-
+			
+			do {
+				self.episodes = try await episodesTask
+				self.image = try await imageTask
+			} catch {
+				self.error = error.localizedDescription
+				self.showError = true
+			}
 			isLoading = false
+            
+		} catch let networkError as NetworkError {
+			isLoading = false
+			switch networkError {
+			case .badRequest:
+				error = Constants.badRequest
+			case .badResponse:
+                error = Constants.badResponse
+			case .localized(description: let description):
+				error = description
+			}
+			showError = true
 		} catch {
-			print("Failed to fetch character: \(error)")
+            isLoading = false
+            showError = true
+            self.error = Constants.unexpectedError
 		}
 	}
 

@@ -10,7 +10,18 @@ import UIKit
 final class CharactersViewController: UIViewController {
 
 	private lazy var collectionView = makeCollectionView()
-	var viewModel: CharacterViewModelProtocol!
+    var viewModel: CharacterViewModelProtocol!
+    
+    // MARK: - Initialisation
+    
+//    init(viewModel: CharacterViewModelProtocol) {
+//        self.viewModel = viewModel
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
 	// MARK: - ViewDidLoad
 
@@ -141,7 +152,7 @@ extension CharactersViewController: CharactersViewProtocol {
 		case .badRequest:
 			alertMessage = Constants.badRequest
 		case .badResponse:
-			alertMessage = "Сервер вернул некорректный ответ."
+            alertMessage = Constants.badResponse
 		case .localized(description: let description):
 			alertMessage = description
 		}
