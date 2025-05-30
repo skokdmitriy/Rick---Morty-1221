@@ -65,7 +65,6 @@ final class CharacterViewModel: CharacterViewModelProtocol {
 		} catch {
 			self.view?.failure(error: .localized(description: "Неожидання ошибка"))
 		}
-
 		isLoading = false
 	}
 
@@ -83,3 +82,4 @@ final class CharacterViewModel: CharacterViewModelProtocol {
 		}
 	}
 }
+

@@ -19,7 +19,7 @@ struct DetailView: View {
 					.progressViewStyle(CircularProgressViewStyle(tint: Color(hex: Colors.green)))
             } else {
                 ScrollView {
-					VStack(spacing: 24) {
+					LazyVStack(spacing: 24) {
                         if let detailModel = viewModel.character,
 						   let image = viewModel.image {
 							HeaderView(model: detailModel, image: image)
@@ -35,6 +35,16 @@ struct DetailView: View {
 		.task {
 			viewModel.task()
 		}
+        .alert(
+            Constants.alertTitle,
+            isPresented: $viewModel.showError
+        ) {
+			Button("OK", role: .cancel) {}
+		} message: {
+			if let error = viewModel.error {
+				Text(error)
+			}
+		}
     }
 }
 
@@ -46,7 +56,7 @@ private extension DetailView {
 			Text(Constants.textEpisodes)
 				.foregroundColor(.white)
 				.font(.title5)
-			ForEach(viewModel.episodes) { episode in
+            ForEach(viewModel.episodes) { episode in
 				EpisodeRowView(model: episode)
 			}
 		}

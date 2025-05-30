@@ -7,7 +7,6 @@
 
 import UIKit
 
-@MainActor
 protocol DetailViewModelProtocol: AnyObject {
 	var episodes: [EpisodeModel] { get }
 	var character: CharacterDetailModel? { get }
