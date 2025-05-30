@@ -11,17 +11,6 @@ final class CharactersViewController: UIViewController {
 
 	private lazy var collectionView = makeCollectionView()
     var viewModel: CharacterViewModelProtocol!
-    
-    // MARK: - Initialisation
-    
-//    init(viewModel: CharacterViewModelProtocol) {
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
 
 	// MARK: - ViewDidLoad
 
