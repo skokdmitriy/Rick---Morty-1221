@@ -8,6 +8,6 @@
 import Foundation
 
 protocol CharactersViewProtocol: AnyObject {
-	func didLoadNewCharacters(indexPaths: [IndexPath])
-	func failure(error: NetworkError)
+    func didLoadNewCharacters(indexPaths: [IndexPath])
+    func failure(error: NetworkError)
 }

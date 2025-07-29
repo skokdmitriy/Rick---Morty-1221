@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct HeaderView: View {
-	let model: CharacterDetailModel
-	var image: UIImage
+    let model: CharacterDetailModel
+    var image: UIImage
 
-	var body: some View {
-		VStack(spacing: 24) {
-			Image(uiImage: image)
-				.resizable()
-				.frame(width: 148, height: 148)
-				.cornerRadius(16)
+    var body: some View {
+        VStack(spacing: 24) {
+            Image(uiImage: image)
+                .resizable()
+                .frame(width: 148, height: 148)
+                .cornerRadius(16)
 
-			VStack(spacing: 8) {
-				Text(model.name)
-					.foregroundColor(.white)
-					.font(.title3)
+            VStack(spacing: 8) {
+                Text(model.name)
+                    .foregroundColor(.white)
+                    .font(.title3)
 
-				Text(model.status)
-					.foregroundColor(model.statusColor())
-					.font(.body)
-			}
-		}
-		.padding(.top, 16)
-	}
+                Text(model.status.rawValue)
+                    .foregroundColor(model.status.color)
+                    .font(.body)
+            }
+        }
+        .padding(.top, 16)
+    }
 }

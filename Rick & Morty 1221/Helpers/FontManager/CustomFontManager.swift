@@ -8,21 +8,21 @@
 import UIKit
 
 class CustomFontManager {
-	static func registrationCustomFounts() {
-		let fountURLs = fetchFountsURLs(withExtension: "ttf", isSubdirectory: "Resources/Fonts")
-	}
+    static func registrationCustomFounts() {
+        let fountURLs = fetchFountsURLs(withExtension: "ttf", isSubdirectory: "Resources/Fonts")
+    }
 
-	private static func fetchFountsURLs(
-		withExtension: String,
-		isSubdirectory subdirectory: String?
-	) -> [URL] {
-		return Bundle(for: self).urls(
-			forResourcesWithExtension: withExtension,
-			subdirectory: subdirectory
-		) ?? []
-	}
+    private static func fetchFountsURLs(
+        withExtension: String,
+        isSubdirectory subdirectory: String?
+    ) -> [URL] {
+        return Bundle(for: self).urls(
+            forResourcesWithExtension: withExtension,
+            subdirectory: subdirectory
+        ) ?? []
+    }
 
-	private static func registrationFont(form url: URL) -> Bool {
-		return CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
-	}
+    private static func registrationFont(form url: URL) -> Bool {
+        return CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+    }
 }

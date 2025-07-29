@@ -8,27 +8,27 @@
 import SwiftUI
 
 extension Font {
-	static var title2: Font {
-		FontsImp().title2
-	}
+    static var title2: Font {
+        FontsImp().title2
+    }
 
-	static var title3: Font {
-		FontsImp().title3
-	}
-	
-	static var title5: Font {
-		FontsImp().title5
-	}
+    static var title3: Font {
+        FontsImp().title3
+    }
 
-	static var body: Font {
-		FontsImp().body
-	}
+    static var title5: Font {
+        FontsImp().title5
+    }
 
-	static var bodySmall: Font {
-		FontsImp().bodySmall
-	}
+    static var body: Font {
+        FontsImp().body
+    }
 
-	static var bodyExtraSmall: Font {
-		FontsImp().bodyExtraSmall
-	}
+    static var bodySmall: Font {
+        FontsImp().bodySmall
+    }
+
+    static var bodyExtraSmall: Font {
+        FontsImp().bodyExtraSmall
+    }
 }
