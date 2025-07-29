@@ -10,7 +10,7 @@ import SwiftUI
 final class DetailViewController: UIViewController {
     private let viewModel: DetailViewModel
 
-	// MARK: - Lifecycle
+    // MARK: - Lifecycle
 
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
@@ -28,7 +28,7 @@ final class DetailViewController: UIViewController {
         configureNavigationBar()
     }
 
-	// MARK: - Private
+    // MARK: - Private
 
     private func configureNavigationBar() {
         navigationController?.navigationBar.tintColor = .white
@@ -36,11 +36,11 @@ final class DetailViewController: UIViewController {
     }
 
     private func makeDetailView() {
-		let detailView = DetailView(viewModel: viewModel)
+        let detailView = DetailView(viewModel: viewModel)
         let controller = UIHostingController(rootView: detailView)
-
+        
         addChild(controller)
-		view.addSubview(controller.view)
+        view.addSubview(controller.view)
         controller.didMove(toParent: self)
 
         controller.view.translatesAutoresizingMaskIntoConstraints = false

@@ -13,22 +13,22 @@ extension UINavigationController {
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.backgroundColor = UIColor(hex: Colors.background)
 
-		let titleFont = UIFont.title5
-		let largeTitleFont = UIFont.title2
+        let titleFont = UIFont.title5
+        let largeTitleFont = UIFont.title2
 
         navigationBarAppearance.titleTextAttributes = [
-			.foregroundColor: UIColor.white,
-			.font: titleFont
-		]
+            .foregroundColor: UIColor.white,
+            .font: titleFont
+        ]
 
         navigationBarAppearance.largeTitleTextAttributes = [
-			.foregroundColor: UIColor.white,
-			.font: largeTitleFont,
-			NSAttributedString.Key.baselineOffset: 31
-		]
+            .foregroundColor: UIColor.white,
+            .font: largeTitleFont,
+            NSAttributedString.Key.baselineOffset: 31
+        ]
 
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-	}
+    }
 }

@@ -8,11 +8,11 @@
 import SwiftUI
 
 protocol Fonts {
-	var title2: Font { get }
-	var title3: Font { get }
-	var title5: Font { get }
+    var title2: Font { get }
+    var title3: Font { get }
+    var title5: Font { get }
 
-	var body: Font { get }
-	var bodySmall: Font { get }
-	var bodyExtraSmall: Font { get }
+    var body: Font { get }
+    var bodySmall: Font { get }
+    var bodyExtraSmall: Font { get }
 }

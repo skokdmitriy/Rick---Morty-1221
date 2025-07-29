@@ -12,53 +12,53 @@ struct DetailView: View {
 
     var body: some View {
         ZStack {
-			Color(hex: Colors.background).ignoresSafeArea()
+            Color(hex: Colors.background).ignoresSafeArea()
 
             if viewModel.isLoading {
                 ProgressView()
-					.progressViewStyle(CircularProgressViewStyle(tint: Color(hex: Colors.green)))
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color(hex: Colors.green)))
             } else {
                 ScrollView {
-					LazyVStack(spacing: 24) {
+                    LazyVStack(spacing: 24) {
                         if let detailModel = viewModel.character,
-						   let image = viewModel.image {
-							HeaderView(model: detailModel, image: image)
+                           let image = viewModel.image {
+                            HeaderView(model: detailModel, image: image)
                             InfoSectionView(model: detailModel)
                             OriginSectionView(model: detailModel)
-							episodeSectionView
-						}
+                            episodeSectionView
+                        }
                     }
-					.padding(.horizontal, 24)
+                    .padding(.horizontal, 24)
                 }
             }
         }
-		.task {
-			viewModel.task()
-		}
+        .task {
+            viewModel.task()
+        }
         .alert(
             Constants.alertTitle,
             isPresented: $viewModel.showError
         ) {
-			Button("OK", role: .cancel) {}
-		} message: {
-			if let error = viewModel.error {
-				Text(error)
-			}
-		}
+            Button("OK", role: .cancel) {}
+        } message: {
+            if let error = viewModel.error {
+                Text(error)
+            }
+        }
     }
 }
 
 // MARK: - EpisodeSectionView
 
 private extension DetailView {
-	var episodeSectionView: some View {
-		LazyVStack(alignment: .leading, spacing: 16) {
-			Text(Constants.textEpisodes)
-				.foregroundColor(.white)
-				.font(.title5)
+    var episodeSectionView: some View {
+        LazyVStack(alignment: .leading, spacing: 16) {
+            Text(Constants.textEpisodes)
+                .foregroundColor(.white)
+                .font(.title5)
             ForEach(viewModel.episodes) { episode in
-				EpisodeRowView(model: episode)
-			}
-		}
-	}
+                EpisodeRowView(model: episode)
+            }
+        }
+    }
 }

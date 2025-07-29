@@ -9,15 +9,15 @@ import Foundation
 
 struct Characters: Decodable {
     let results: [CharacterModel]
-	let info: Info
+    let info: Info
 }
 
 struct CharacterModel: Decodable {
-	let name: String
-	let image: URL
-	let url: URL
+    let name: String
+    let image: URL
+    let url: URL
 }
 
 struct Info: Decodable {
-	let next: URL
+    let next: URL
 }

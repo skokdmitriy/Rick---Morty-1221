@@ -8,17 +8,17 @@
 import UIKit
 
 protocol DetailViewModelProtocol: AnyObject {
-	var episodes: [EpisodeModel] { get }
-	var character: CharacterDetailModel? { get }
-	var isLoading: Bool { get set }
-	var image: UIImage? { get }
+    var episodes: [EpisodeModel] { get }
+    var character: CharacterDetailModel? { get }
+    var isLoading: Bool { get set }
+    var image: UIImage? { get }
 
-	init(
-		router: RouterProtocol,
-		networkService: NetworkServiceProtocol,
-		imageLoader: ImageLoaderService,
-		urlCharacter: URL
-	)
+    init(
+        router: RouterProtocol,
+        networkService: NetworkServiceProtocol,
+        imageLoader: ImageLoaderService,
+        urlCharacter: URL
+    )
 
-	func task()
+    func task()
 }
